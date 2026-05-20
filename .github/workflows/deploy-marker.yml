@@ -1,0 +1,12 @@
+# Маркер деплоя — пустой workflow для триггера webhook workflow_run.
+# Используется release-radar e2e-smoke.
+name: deploy-marker
+on:
+  push:
+    branches: [develop]
+jobs:
+  marker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: noop
+        run: echo "deploy-marker triggered for ${GITHUB_SHA::7}"
